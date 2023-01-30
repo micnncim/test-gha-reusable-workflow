@@ -1,0 +1,14 @@
+name: Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        description: Foo
+        required: true
+
+jobs:
+  test:
+    uses: micnncim/test-gha-composite-action/.github/workflows/_test.yml@main
+    with:
+      foo: ${{ github.event.inputs.foo }}
